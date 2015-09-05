@@ -41,7 +41,6 @@ Supported Bootstrap themes:
 - **Attributes**:
   - **shares** : expects an `array` of `social.*()` macros.
 
-**Example**
 
 ```twig
 {% import '@bootstrap/components/social/share.html.twig' as social %}
