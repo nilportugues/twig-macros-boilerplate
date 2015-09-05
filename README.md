@@ -1,12 +1,9 @@
-# Twig macros as building blocks
+# Twig Building blocks
 
-### Technology stack
 
-HTML5, Javascript (Jquery), Bootstrap 3.2 and FlatUI theme, Twig from Sensiolabs
+## Themes
 
-<br>
-
-## Bootstrap 3
+### Bootstrap 3
 
 Macros using Twitter's Bootstrap 3.2 version.
 
@@ -19,7 +16,7 @@ Supported Bootstrap themes:
     - **macro**: `@flatui`
     - **path**: `theme/bootstrap3_flat-ui`
 
-### Social Buttons
+#### Social Buttons
 
 **Social Login button**
 
