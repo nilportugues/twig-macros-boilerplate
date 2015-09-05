@@ -16,6 +16,59 @@ Supported Bootstrap themes:
     - **macro**: `@flatui`
     - **path**: `theme/bootstrap3_flat-ui`
 
+#### Tabs
+
+- **Macro**: `flat_tabs(tabs, tab_content, selected)`
+- **Attributes**:
+  - **tabs** : Associative array `{"key" :"the name of the tab", "value": "the string to show"}`
+  - **tab_content** : Associative array `{"key" :"the name of the tab", "value": "HTML for the tab"}`
+  - **selected** : `string` with the name of the `active` tab. If none, first is selected.
+
+```twig
+{% from '@bootstrap/components/tabs/flat_tabs/flat_tabs.html.twig' import flat_tabs as tabs %}
+
+<div class="container" style="max-width:700px">
+
+    <h3>Tabs</h3>
+
+    {% set hoteles_tab %}
+    <div class="container" style="padding-top:12px">
+        <div class="row">
+            <div class="col-md-12"><p>Soy de Hoteles</p>
+            </div>
+        </div>
+    </div>
+    {% endset %}
+
+    {% set vuelos_tab %}
+    <div class="container" style="padding-top:12px">
+        <div class="row">
+            <div class="col-md-12"><p>Soy de Vuelos</p>
+            </div>
+        </div>
+    </div>
+    {% endset %}
+
+    {% set viajes_tab %}
+    <div class="container" style="padding-top:12px">
+        <div class="row">
+            <div class="col-md-12"><p>Soy de Viajes</p>
+            </div>
+        </div>
+    </div>
+    {% endset %}
+
+    {{
+        tabs
+        (
+          {"vuelos" : "Vuelos", "hoteles" : "Hoteles", "viajes": "<span class='fa fa-github'></span> Viajes"},
+          {"vuelos" : vuelos_tab, "hoteles" : hoteles_tab, "viajes": viajes_tab},
+          "viajes"
+        )
+    }}
+</div>
+```
+
 #### Social Buttons
 
 **Social Login button**
