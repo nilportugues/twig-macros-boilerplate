@@ -1,43 +1,54 @@
 
 {% from '@bootstrap/components/cards/vertical_card.html.twig' import news_vertical_card as news_article %}
 {% import '@bootstrap/components/social/login.html.twig' as login %}
-{% import '@bootstrap/components/social/share.html.twig' as social %}
+{% import '@bootstrap/components/social/share.html.twig' as share %}
 {% import '@macros/form-macros.html.twig' as form %}
 
-<!-- Bootstrap core CSS -->
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>{% include "@bootstrap/custom.js.twig" %}</script>
+
+<!-- Bootstrap core CSS -->
 <link href="http://lipis.github.io/bootstrap-social/assets/css/font-awesome.css" rel="stylesheet">
-<style>
-    {% include "@bootstrap/bootstrap.min.css" %}
-    {% include "@bootstrap/custom.css.twig" %}
-</style>
+<style>{% include "@bootstrap/bootstrap.min.css" %}</style>
+<!--<style>{% include "@bootstrap/custom.css.twig" %}</style>-->
+
+<!-- Bootstrap Flat UI -->
+<link href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet">
+<style>{% include "@flatui/custom.css.twig" %}</style>
+
+
 <div class="container" style="max-width:700px">
 
 
     <div class="row-fluid">
         <h3>Social login macros</h3>
-        <div style="width:190px; padding:12px 0">
-            {{ login.twitter('Share on Twitter') }}
+        <h4>Sign in</h4>
+        <div style="width:200px; padding:12px 0">
+            {{ login.twitter('Sign in Twitter') }}
             {{ login.facebook('Sign in with Facebook') }}
             {{ login.google('Sign in with Google') }}
             {{ login.linkedin('Sign in with Linkedin') }}
         </div>
-        <h3>Share macros</h3>
+
+
+
+        <h4>Simple buttons</h4>
         <div style="width:190px; padding:12px 0">
-            {% set social_data  = {
-                'target' : 'popup',
-                'href': 'http://localhost:8000/',
-                'twitter' : 'niluspc',
-                'twitter_text' : 'News header'
-                }
-            %}
-            {{ social.twitter(social_data) }}
-            {{ social.facebook(social_data) }}
-            {{ social.google(social_data) }}
-            {{ social.linkedin(social_data) }}
+            {% set social_data  = {'href': 'http://localhost:8000/'} %}
+            {% set twitter_social_data  = {'twitter' : 'niluspc', 'twitter_text' : 'News header'} %}
+
+            {{ share.twitter(twitter_social_data|merge(social_data)) }}
+            {{ share.facebook(social_data) }}
+            {{ share.google(social_data) }}
+            {{ share.linkedin(social_data) }}
         </div>
+
+
     </div>
     <div class="row-fluid">
 

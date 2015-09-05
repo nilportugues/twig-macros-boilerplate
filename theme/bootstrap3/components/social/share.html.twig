@@ -104,10 +104,11 @@
 {# ----------------------------------------------------------------------------------- #}
 
 {% macro twitter(args) %}
-    {% set href = { "href": 'http://twitter.com/share?url=' ~ args.href|url_encode ~ "&via=" ~ args.twitter|url_encode ~ "&text=" ~ args.twitter_text|url_encode } %}
-    {% set args = args|merge(href) %}
+{% set href = 'http://twitter.com/share?url=' ~ args.href|url_encode ~ "&via=" ~ args.twitter|url_encode ~ "&text=" ~ args.twitter_text|url_encode %}
 
-    {{ _self.share_button('twitter', args)}}
+<a target="popup" href="{{- href -}}" class="btn btn-social-icon btn-twitter">
+<i class="fa fa-twitter"></i>
+</a>
 {% endmacro %}
 
 {# ----------------------------------------------------------------------------------- #}
@@ -132,7 +133,7 @@
 
 
 {% macro share_button(type, args) %}
-    <a {% for attribute, value in args %}{{- attribute -}}="{{- value -}}" {% endfor %} class="btn btn-social-icon btn-{{- type -}}">
+    <a target="popup" {% for attribute, value in args %}{{- attribute -}}="{{- value -}}" {% endfor %}class="btn btn-social-icon btn-{{- type -}}">
     <i class="fa fa-{{- type -}}"></i>
     </a>
 {% endmacro %}
