@@ -6,6 +6,19 @@ HTML5, Javascript (Jquery), Bootstrap 3.2 and FlatUI theme, Twig from Sensiolabs
 
 <br>
 
+## Bootstrap 3
+
+Macros using Twitter's Bootstrap 3.2 version.
+
+  - **macro**: `@bootstrap`
+  - **path**: `theme/bootstrap3`
+
+Supported Bootstrap themes:
+
+  - **FlatUI**
+    - **macro**: `@flatui`
+    - **path**: `theme/bootstrap3_flat-ui`
+
 ### Social Buttons
 
 **Social Login button**
