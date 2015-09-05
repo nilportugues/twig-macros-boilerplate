@@ -1,10 +1,10 @@
 # Twig macros as building blocks
 
-## Technology stack
+### Technology stack
 
 HTML5, Javascript (Jquery), Bootstrap 3.2 and FlatUI theme, Twig from Sensiolabs
 
-----------------
+<br>
 
 ### Social Buttons
 
