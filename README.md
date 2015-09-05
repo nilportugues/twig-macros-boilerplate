@@ -1,16 +1,31 @@
-# Twig macros as building blocks
+# Twig Building blocks
 
-## Technology stack
 
-HTML5, Javascript (Jquery), Bootstrap 3.2 and FlatUI theme, Twig from Sensiolabs
+## Themes
 
-----------------
+### Bootstrap 3
 
-### Social Buttons
+Macros using Twitter's Bootstrap 3.2 version.
+
+  - **macro**: `@bootstrap`
+  - **path**: `theme/bootstrap3`
+
+Supported Bootstrap themes:
+
+  - **FlatUI**
+    - **macro**: `@flatui`
+    - **path**: `theme/bootstrap3_flat-ui`
+
+#### Social Buttons
 
 **Social Login button**
 
-```html
+- **Macro**: `login.twitter(text, args)` (any network listed below)
+- **Attributes**:
+  - **text** : A string.
+  - **args** : attributes for the anchor tag.
+  
+```twig
 {% import '@bootstrap/components/social/login.html.twig' as login %}
 
 <div class="row-fluid">
@@ -24,11 +39,40 @@ HTML5, Javascript (Jquery), Bootstrap 3.2 and FlatUI theme, Twig from Sensiolabs
 </div>        
 ```
 
+The following function names representing social networks are available: 
 
-**Social Share button**
+- login.appnet
+- login.bitbucket
+- login.dropbox
+- facebook
+- login.flickr
+- login.foursquare
+- login.github 
+- login.google
+- login.instagram
+- login.linkedin
+- login.microsoft
+- login.odnoklassniki
+- login.openid
+- login.pinterest
+- login.reddit
+- login.soundcloud
+- login.tumblr
+- login.twitter
+- login.vimeo
+- login.vk 
+- login.yahoo
 
-```html
-{% import '@bootstrap/components/social/share.html.twig' as share %}
+
+#### Social Share button
+
+- **Macro**: `share_button(shares)`
+- **Attributes**:
+  - **shares** : expects an `array` of `social.*()` macros.
+
+
+```twig
+{% import '@bootstrap/components/social/share.html.twig' as social %}
 {% from '@bootstrap/components/social/share_button.html.twig' import share_button as share %}
 
 <div class="row-fluid">
