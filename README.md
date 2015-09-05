@@ -1,5 +1,15 @@
 # Twig Building blocks
 
+## Installation
+
+```sh
+php composer.phar install
+cd example/
+php -S locahost:8000 index.php
+```
+
+----------------------
+
 
 ## Themes
 
