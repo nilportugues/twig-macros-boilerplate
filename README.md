@@ -20,6 +20,15 @@ Supported Bootstrap themes:
 
 **Social Login button**
 
+The following function names representing social networks are available: 
+
+appnet, bitbucket, dropbox, facebook, flickr, foursquare, github, google, instagram, linkedin, microsoft, odnoklassniki, openid, pinterest, reddit, soundcloud, tumblr, twitter, vimeo, vk, yahoo.
+
+- **Macro**: `twitter(text, args)` (any network listed above)
+- **Attributes**:
+  - **text** : A string.
+  - **args** : attributes for the anchor tag.
+  
 ```twig
 {% import '@bootstrap/components/social/login.html.twig' as login %}
 
