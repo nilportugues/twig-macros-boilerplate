@@ -10,7 +10,7 @@ HTML5, Javascript (Jquery), Bootstrap 3.2 and FlatUI theme, Twig from Sensiolabs
 
 **Social Login button**
 
-```html
+```twig
 {% import '@bootstrap/components/social/login.html.twig' as login %}
 
 <div class="row-fluid">
@@ -27,7 +27,7 @@ HTML5, Javascript (Jquery), Bootstrap 3.2 and FlatUI theme, Twig from Sensiolabs
 
 **Social Share button**
 
-```html
+```twig
 {% import '@bootstrap/components/social/share.html.twig' as share %}
 {% from '@bootstrap/components/social/share_button.html.twig' import share_button as share %}
 
