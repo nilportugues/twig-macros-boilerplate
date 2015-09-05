@@ -20,7 +20,7 @@ Supported Bootstrap themes:
 
 **Social Login button**
 
-- **Macro**: `login.twitter(text, args)` (any network listed above)
+- **Macro**: `login.twitter(text, args)` (any network listed below)
 - **Attributes**:
   - **text** : A string.
   - **args** : attributes for the anchor tag.
