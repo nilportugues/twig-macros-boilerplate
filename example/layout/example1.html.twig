@@ -1,5 +1,6 @@
 
-{% from '@bootstrap/components/tabs/flat_tabs/flat_tabs.html.twig' import flat_tabs as tabs %}
+{% from '@bootstrap/components/tabs/flat_tabs/flat_tabs.html.twig' import flat_tabs as flat_tabs %}
+{% from '@bootstrap/components/tabs/paneled_tabs/paneled_tabs.html.twig' import paneled_tabs as paneled_tabs %}
 
 {% from '@bootstrap/components/cards/vertical_card.html.twig' import news_vertical_card as news_article %}
 {% from '@bootstrap/components/social/share_button.html.twig' import share_button as share %}
@@ -27,7 +28,7 @@
 
 <div class="container" style="max-width:700px">
 
-    <h3>Tabs</h3>
+    <h3>Basic Tabs</h3>
 
     {% set hoteles_tab %}
     <div class="container" style="padding-top:12px">
@@ -57,7 +58,7 @@
     {% endset %}
 
     {{
-        tabs
+        flat_tabs
         (
             {
                 "vuelos" : "Vuelos",
@@ -73,6 +74,57 @@
         )
     }}
 </div>
+
+
+
+
+<div class="container" style="max-width:700px">
+
+    <h3>Panel Tabs</h3>
+
+
+    {{
+        paneled_tabs
+        (
+            {
+                "kanto1" : "Kanto",
+                "johto1" : "Johto",
+                "sinnoh1": "Sinnoh"
+            },
+            {
+                "kanto1" : "<ul><li>Bulbasaur</li><li>Charmander</li><li>Squirtle</li><li>Pikachu</li></ul>",
+                "johto1" : "<ul><li>Chikorita</li><li>Cyndaquil</li><li>Totodile</li></ul>",
+                "sinnoh1": "<ul><li>Treecko</li><li>Torchic</li><li>Mudkip</li></ul>"
+            },
+            "kanto1"
+        )
+    }}
+
+    <h3>Named Panel Tabs</h3>
+
+
+    {{
+        paneled_tabs
+        (
+            {
+                "kanto2" : "Kanto",
+                "johto2" : "Johto",
+                "sinnoh2": "Sinnoh"
+            },
+            {
+                "kanto2" : "<ul><li>Bulbasaur</li><li>Charmander</li><li>Squirtle</li><li>Pikachu</li></ul>",
+                "johto2" : "<ul><li>Chikorita</li><li>Cyndaquil</li><li>Totodile</li></ul>",
+                "sinnoh2": "<ul><li>Treecko</li><li>Torchic</li><li>Mudkip</li></ul>"
+            },
+            "johto2",
+            "Starter Pokémon"
+        )
+    }}
+</div>
+
+
+
+
 
 
 <div class="container" style="max-width:700px">
