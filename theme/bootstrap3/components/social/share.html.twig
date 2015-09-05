@@ -44,6 +44,9 @@
 {# ----------------------------------------------------------------------------------- #}
 
 {% macro google(args) %}
+    {% set href = { "href": 'https://plus.google.com/share?url=' ~ args.href|url_encode}  %}
+    {% set args = args|merge(href) %}
+
     {{ _self.share_button('google', args)}}
 {% endmacro %}
 

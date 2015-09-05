@@ -1,0 +1,9 @@
+{% macro share_button(shares) %}
+<div class="btn-group">
+    <button type="button" class="dropdown-toggle btn btn-default btn-social-icon btn-share-alt"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-share-alt"></i>
+    </button>
+    <span class="dropdown-menu share-button-horizontal">{% for share in shares %}{{- share -}}{% endfor %}</span>
+</div>
+{% endmacro %}
