@@ -29,21 +29,47 @@
 
     <h3>Tabs</h3>
 
+    {% set hoteles_tab %}
+    <div class="container" style="padding-top:12px">
+        <div class="row">
+            <div class="col-md-12"><p>Soy de Hoteles</p>
+            </div>
+        </div>
+    </div>
+    {% endset %}
+
+    {% set vuelos_tab %}
+    <div class="container" style="padding-top:12px">
+        <div class="row">
+            <div class="col-md-12"><p>Soy de Vuelos</p>
+            </div>
+        </div>
+    </div>
+    {% endset %}
+
+    {% set viajes_tab %}
+    <div class="container" style="padding-top:12px">
+        <div class="row">
+            <div class="col-md-12"><p>Soy de Viajes</p>
+            </div>
+        </div>
+    </div>
+    {% endset %}
+
     {{
         tabs
         (
             {
                 "vuelos" : "Vuelos",
                 "hoteles" : "Hoteles",
-                "viajes": "Viajes"
+                "viajes": "<span class='fa fa-github'></span> Viajes"
             },
             {
-                "vuelos" : '<div class="container" style="padding-top:12px"><div class="row"><div class="col-md-12"><p>Soy de Vuelos</p></div></div></div>',
-                "hoteles" : '<div class="container" style="padding-top:12px"><div class="row"><div class="col-md-12"><p>Soy de Hoteles</p></div></div></div>',
-                "viajes": '<div class="container" style="padding-top:12px"><div class="row"><div class="col-md-12"><p>Soy de Viajes</p></div></div></div>'
+                "vuelos" : vuelos_tab,
+                "hoteles" : hoteles_tab,
+                "viajes": viajes_tab
             },
             "viajes"
-
         )
     }}
 </div>
