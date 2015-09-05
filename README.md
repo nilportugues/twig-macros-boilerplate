@@ -35,7 +35,11 @@ HTML5, Javascript (Jquery), Bootstrap 3.2 and FlatUI theme, Twig from Sensiolabs
   <h4>Simple buttons</h4>
   <div style="width:190px; padding:12px 0">
     {% set social_data  = {'href': 'http://localhost:8000/'} %}
-    {% set twitter_social_data  = {'twitter' : 'niluspc', 'twitter_text' : 'News header'} %}
+    
+    {% set twitter_social_data  = {
+      'twitter' : 'niluspc', 
+      'twitter_text' : 'News header'
+    } %}
   
     {{ social.twitter(twitter_social_data|merge(social_data)) }}
     {{ social.facebook(social_data) }}
