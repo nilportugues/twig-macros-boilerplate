@@ -20,11 +20,7 @@ Supported Bootstrap themes:
 
 **Social Login button**
 
-The following function names representing social networks are available: 
-
-appnet, bitbucket, dropbox, facebook, flickr, foursquare, github, google, instagram, linkedin, microsoft, odnoklassniki, openid, pinterest, reddit, soundcloud, tumblr, twitter, vimeo, vk, yahoo.
-
-- **Macro**: `twitter(text, args)` (any network listed above)
+- **Macro**: `login.twitter(text, args)` (any network listed above)
 - **Attributes**:
   - **text** : A string.
   - **args** : attributes for the anchor tag.
@@ -42,6 +38,30 @@ appnet, bitbucket, dropbox, facebook, flickr, foursquare, github, google, instag
   </div>
 </div>        
 ```
+
+The following function names representing social networks are available: 
+
+- login.appnet
+- login.bitbucket
+- login.dropbox
+- facebook
+- login.flickr
+- login.foursquare
+- login.github 
+- login.google
+- login.instagram
+- login.linkedin
+- login.microsoft
+- login.odnoklassniki
+- login.openid
+- login.pinterest
+- login.reddit
+- login.soundcloud
+- login.tumblr
+- login.twitter
+- login.vimeo
+- login.vk 
+- login.yahoo
 
 
 #### Social Share button
