@@ -1,4 +1,6 @@
 
+{% from '@bootstrap/components/tabs/flat_tabs/flat_tabs.html.twig' import flat_tabs as tabs %}
+
 {% from '@bootstrap/components/cards/vertical_card.html.twig' import news_vertical_card as news_article %}
 {% from '@bootstrap/components/social/share_button.html.twig' import share_button as share %}
 {% import '@bootstrap/macros/media/image.html.twig' as image %}
@@ -18,10 +20,33 @@
 <!-- Bootstrap core CSS -->
 <link href="http://lipis.github.io/bootstrap-social/assets/css/font-awesome.css" rel="stylesheet">
 <style>{% include "@bootstrap/bootstrap.min.css" %}</style>
+<style>{% include "@bootstrap/custom.css.twig" %}</style>
 
 <!-- Bootstrap Flat UI -->
-<link href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet">
-<style>{% include "@flatui/custom.css.twig" %}</style>
+<!--<link href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet">-->
+
+<div class="container" style="max-width:700px">
+
+    <h3>Tabs</h3>
+
+    {{
+        tabs
+        (
+            {
+                "vuelos" : "Vuelos",
+                "hoteles" : "Hoteles",
+                "viajes": "Viajes"
+            },
+            {
+                "vuelos" : '<div class="container" style="padding-top:12px"><div class="row"><div class="col-md-12"><p>Soy de Vuelos</p></div></div></div>',
+                "hoteles" : '<div class="container" style="padding-top:12px"><div class="row"><div class="col-md-12"><p>Soy de Hoteles</p></div></div></div>',
+                "viajes": '<div class="container" style="padding-top:12px"><div class="row"><div class="col-md-12"><p>Soy de Viajes</p></div></div></div>'
+            },
+            "viajes"
+
+        )
+    }}
+</div>
 
 
 <div class="container" style="max-width:700px">

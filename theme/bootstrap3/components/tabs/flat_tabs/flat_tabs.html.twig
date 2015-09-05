@@ -1,18 +1,17 @@
-{% macro flat_tab(tabs, tab_contents, selected) %}
-
+{% macro flat_tabs(tabs, tab_contents, selected) %}
 <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+    {% for key, tab in tabs %}
+        {%  set active = '' %}
+        {%  if selected == key %}{%  set active = 'class="active"' %}{% endif %}
+        <li role="presentation" {{- active|raw -}}><a href="#{{- key -}}" aria-controls="{{- key -}}" role="tab" data-toggle="tab">{{- tab|raw -}}</a></li>
+    {% endfor %}
 </ul>
 
-<!-- Tab panes -->
 <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">...</div>
-    <div role="tabpanel" class="tab-pane" id="profile">...</div>
-    <div role="tabpanel" class="tab-pane" id="messages">...</div>
-    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+    {% for key, tab in tab_contents %}
+        {%  set active = '' %}
+        {%  if selected == key %}{%  set active = ' active' %}{% endif %}
+        <div role="tabpanel" class="tab-pane {{- active|raw -}}" id="{{- key -}}">{{ tab|raw }}</div>
+    {% endfor %}
 </div>
-
 {% endmacro %}
