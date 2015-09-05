@@ -1,0 +1,59 @@
+
+{% from '@bootstrap/components/cards/vertical_card.html.twig' import news_vertical_card as news %}
+{% import '@macros/form-macros.html.twig' as form %}
+
+<!-- Bootstrap core CSS -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<div class="container" style="max-width:700px">
+
+
+    <div class="row-fluid">
+
+
+
+<!--
+        <form>
+
+            {{ form.label('dropdown', 'Dropdown') }}
+            {% set options %}
+                {{ form.option('1', 'Option 1') }}
+                {{ form.option('2', 'Option 2') }}
+                {{ form.option('3', 'Option 3', {'selected':'selected'}) }}
+                {{ form.option('4', 'Option 4') }}
+            {% endset %}
+            {{ form.select('dropdown', options, '{id: dropdown}') }}
+
+
+            <br>{{ form.textarea('test', 'content', {"style" : "border-color:red"}) }}
+            <br>{{ form.submit('Submit button')}}
+        </form>
+-->
+
+        {{
+            news({
+                "author": 'Nil Portugués',
+                "author_link": '/profile/nilportugues',
+                "header_image": 'http://images.ara.cat/politica/Diversos-Penedes-Comissio-Vilafranca-ACN_ARAIMA20150904_0368_1.jpg',
+                "header": "La Junta Electoral obliga a retirar 400 estelades dels carrers de Vilafranca del Penedès",
+                "subheader": "Òmnium Cultural, l'ANC i la Comissió 11 de Setembre les regalaran aquest dissabte als veïns perquè les pengin als balcons",
+                "date": '2015-09-04 21:54',
+                "tags": '<a href="">double</a>, <a href="">battle</a>',
+                "text": "<p> La Junta Electoral ha obligat l'<strong> Ajuntament de Vilafranca del Penedès</strong> a despenjar dels carrers del municipi 400 cartells d'<strong> estelades que incloïen un 'Sí' imprès</strong>. Segons la notificació, la Junta Electoral entén que es tracta d'una ocupació de la via pública que difon el suport a una determinada opció política quan encara no ha començat la campanya electoral del 27-S.</p><p> Davant la situació, Òmnium Cultural, l'ANC i la Comissió 11 de Setembre –responsables de la distribució dels cartells– han acatat l'ordre i han retirat tots els cartells. Les mateixes entitats, però, instal·laran aquest dissabte una parada al mercat setmanal de Vilafranca i regalaran les estelades als veïns perquè les pengin als balcons.</p><p> Des d'Òmnium Cultural a l'Alt Penedès, el seu president, <strong> Sergi Sabaté</strong>, ha explicat a l'ACN que interpreten la decisió de la Junta Electoral de Zona \"com un <strong> atac polític més</strong>, d'anar a buscar pessigolles on no n'hi ha\". Segons Sabaté, si s'han interpretat els cartells amb estelades com a propaganda electoral significa que \"la Junta Electoral està <strong> llegint les eleccions com un plebiscit</strong>\". \"Ells mateixos ho reconeixen\", ha dit.</p><p> Les entitats sobiranistes han acceptat la retirada dels cartells per evitar problemes amb l'Ajuntament de Vilafranca –responsable de la via pública–, però han avisat que persistiran amb la difusió de les estelades. \"Si tenim aquestes 400 pancartes, <strong> no les llençarem pas</strong>\", ha apuntat Sabaté. Per això aquest dissabte les distribuiran gratuïtament entre les deu del matí i la una del migdia amb la intenció que els veïns les pengin als balcons perquè és un espai on \"<strong> la Junta Electoral no té potestat de prohibir res</strong>\", ha subratllat.</p>",
+                "cta_link": "#"
+            })
+        }}
+
+
+        {#
+            image({
+                "src": 'http://media.pocketmonsters.net/pages/308/primalbattle.jpg',
+                "alt": 'Banner for Primal Battle Tournament featuring Primal Groudon and Primal Kyogre',
+                "title": 'Primal Battle'
+            })
+        #}
+
+    </div>
+</div>

@@ -1,0 +1,111 @@
+{# --------------------------------------------------------------------------- #}
+{% macro button(text, name, args) %}
+{% spaceless %}
+<button name="{{- name -}}"{% for attribute, value in args %} {{- attribute -}}="{{- value -}}" {% endfor %}>
+{{- text -}}
+</button>
+{% endspaceless %}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro input(type, name, args) %}
+{% spaceless %}
+<input type="{{- type -}}" name="{{- name -}}"{% for attribute, value in args %} {{- attribute -}}="{{- value -}}"{% endfor %}">
+{% endspaceless %}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+
+{% macro text_input(name, args) %}
+{{ _self.input("text", name, args) }}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro submit(text, args) %}
+{% spaceless %}
+<input type="submit" value="{{- text -}}"{% for attribute, value in args %} {{- attribute -}}="{{- value -}}"{% endfor %}>
+{% endspaceless %}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro textarea(text, args) %}
+{% spaceless %}
+<textarea {% for attribute, value in args %}{{- attribute -}}="{{- value -}}" {% endfor %}>
+{{- text -}}
+</textarea>
+{% endspaceless %}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro select(name, options, args) %}
+{% spaceless %}
+<select {% for attribute, value in args %}{{- attribute -}}="{{- value -}}" {% endfor %}>
+{{- options|raw -}}
+</select>
+{% endspaceless %}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro option(name, value, args) %}
+{% spaceless %}
+<option value="{{- value -}}"{% for attribute, v in args %} {{- attribute -}}="{{- v -}}" {% endfor %}>
+{{- name -}}
+</option>
+{% endspaceless %}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro option_group(label, options, args) %}
+{% spaceless %}
+<optgroup label="{{- label -}}"{% for attribute, value in args %} {{- attribute -}}="{{- value -}}" {% endfor %}>
+{{- options|raw -}}
+</optgroup>
+{% endspaceless %}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro fieldset(name, form, args) %}
+{% spaceless %}
+<fieldset name="{{- name -}}"{% for attribute, value in args %} {{- attribute -}}="{{- value -}}" {% endfor %}>
+{{- form|raw -}}
+</fieldset>
+{% endspaceless %}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro label(labelid, label, args) %}
+{% spaceless %}
+<label for="{{- labelid -}}"{% for attribute, value in args %} {{- attribute -}}="{{- value -}}" {% endfor %}>
+{{- label -}}
+</label>
+{% endspaceless %}
+{% endmacro %}
+
+

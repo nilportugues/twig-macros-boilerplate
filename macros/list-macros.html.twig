@@ -1,0 +1,36 @@
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro ordered_list(items, args) %}
+{% spaceless %}
+<ol {% for attribute, value in args %} {{- attribute -}}="{{- value -}}" {% endfor %}>
+{{- items|raw -}}
+</ol>
+{% endspaceless %}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro unordered_list(items, args) %}
+{% spaceless %}
+<ul {% for attribute, value in args %} {{- attribute -}}="{{- value -}}" {% endfor %}>
+{{- items|raw -}}
+</ul>
+{% endspaceless %}
+{% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+{% macro list_item(item, args) %}
+{% spaceless %}
+<li {% for attribute, value in args %} {{- attribute -}}="{{- value -}}" {% endfor %}>
+{{- item|raw -}}
+</li>
+{% endspaceless %}
+{% endmacro %}
+
+

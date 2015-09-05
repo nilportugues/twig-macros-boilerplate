@@ -1,0 +1,13 @@
+{
+    "name": "nilportugues/twig-schema.org-macros",
+    "description": "Macros for basic HTML elements following Schema.org specs",
+    "require": {
+        "twig/twig": "^1.21"
+    },
+    "authors": [
+        {
+            "name": "Nil Portugués Calderó",
+            "email": "nilopc@gmail.com"
+        }
+    ]
+}

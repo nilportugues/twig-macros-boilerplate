@@ -1,0 +1,11 @@
+{# --------------------------------------------------------------------------- #}
+{% macro image(args) %}
+
+{% if args.src %}
+    <img {% for attribute, value in args %}{{- attribute -}}="{{- value -}}" {% endfor %}/>
+{% endif %}
+
+{% endmacro %}
+
+
+

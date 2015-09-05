@@ -1,0 +1,12 @@
+{% macro thumbnail(args) %}
+    {% import '@macros/media-macros.html.twig' as media %}
+    {% set args = args|merge({'class': 'thumbnail'}) %}  {# Bootstrap3: thumbnail #}
+    {{ media.image(args) }}
+{% endmacro %}
+
+
+{% macro rounded(args) %}
+    {% import '@macros/media-macros.html.twig' as media %}
+    {% set args = args|merge({'class': 'img-rounded'}) %} {# Bootstrap3: img-rounded #}
+    {{ media.image(args) }}
+{% endmacro %}

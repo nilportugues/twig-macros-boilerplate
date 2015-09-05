@@ -1,0 +1,133 @@
+
+{######################################################################################################################
+ #
+ # VERTICAL CARD
+ #
+ ######################################################################################################################}
+
+{% macro vertical_card(args) %}
+
+{% set header = args.header %}
+{% set text = args.text %}
+{% set cta_text = args.cta_text %}
+{% set cta_link = args.cta_link %}
+{% set cta_args = args.cta_args %}
+
+{% spaceless %}
+<div class="vertical-card">
+    {{ _self.card_title(header, cta_link) }}
+    {{ _self.card_text(text) }}
+    {{ _self.card_call_to_action_link(cta_text, cta_link, cta_args) }}
+    {{ _self.card_share_button('share', '{ "class": ""}') }}
+</div>
+{% endspaceless %}
+{% endmacro %}
+
+
+{######################################################################################################################
+ #
+ # NEWS CARD
+ #
+ ######################################################################################################################}
+
+{% macro news_vertical_card(args) %}
+
+{% set author = args.author %}
+{% set author_link = args.author_link %}
+{% set header = args.header %}
+{% set header_image = args.header_image %}
+{% set subheader = args.subheader %}
+{% set date = args.date %}
+{% set tags = args.tags %}
+{% set text = args.text %}
+{% set cta_link = args.cta_link %}
+{% spaceless %}
+    <div style="border:0px solid #ccc; border-radius: 0px; overflow: hidden">
+        <div class="row-fluid">
+            <div class="col-md-12" style="padding:0; ">
+                <div style="position:relative; top:0; left:0; z-index: 4"> {{ _self.card_image(header_image, cta_link) }}</div>
+                <div style="position:absolute; left:0; bottom:0px; z-index: 5; padding:0px 24px 12px 24px; background-color: rgba(0,0,0,0.6);">
+                    {{- _self.card_title(header, cta_link) -}}
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <div style="padding:0px 12px">
+                {{ _self.card_subheader(subheader) }}
+                {{ _self.card_by(author, author_link, date) }}
+                {{ _self.card_text(text) }}
+                {{ _self.card_share_button('share', '{ "class": ""}') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endspaceless %}
+{% endmacro %}
+
+
+{######################################################################################################################
+ #
+ # HELPERS
+ #
+ ######################################################################################################################}
+
+{% macro card_image(header_image, cta_link) %}
+    {% import '@macros/media-macros.html.twig' as media %}
+    <a href="{{- cta_link -}}" title="{{- header -}}">{{ media.image({ "src": header_image,  "style" : "width: 100%" }) }}</a>
+{% endmacro %}
+
+{# ----------------------------------------------------------------- #}
+
+{% macro card_share_button(text, args) %}
+    {% import '@macros/form-macros.html.twig' as form %}
+    <div class="card_share">
+        {{ form.button(text, "share", '{ "class": ""}')}}
+    </div>
+{% endmacro %}
+
+{# ----------------------------------------------------------------- #}
+
+{% macro card_call_to_action_link(cta_text, cta_link, cta_args) %}
+    <div class="card_action">
+        <a href="{{- cta_link -}}">{{- cta_text  -}}</a>
+    </div>
+{% endmacro %}
+
+{# ----------------------------------------------------------------- #}
+
+{% macro card_title(header, cta_link) %}
+
+    <h1 class="card_title-text">
+        <a style="color: #eee" href="{{- cta_link -}}" title="{{- header -}}">{{- header -}}</a>
+    </h1>
+
+{% endmacro %}
+
+{# ----------------------------------------------------------------- #}
+
+{% macro card_text(text) %}
+    {% if text %}
+        <div class="card_text">
+            <br> {{- text|raw -}}
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{# ----------------------------------------------------------------- #}
+
+{% macro card_subheader(text) %}
+    {% if text %}
+        <h3 class="text-muted">{{- text|raw -}}</h3>
+    {% endif %}
+{% endmacro %}
+
+{# ----------------------------------------------------------------- #}
+
+{% macro card_by(author, author_link, date) %}
+    <div style="text-transform: uppercase; font-size:11px; color: #aaa">
+        <br> Written by <a href="{{ author_link }}" title="{{ author }}">{{- author -}}</a>. {{ date|date('Y-m-d H:i:s') }}
+    </div>
+{% endmacro %}
