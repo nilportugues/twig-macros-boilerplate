@@ -1,39 +1,35 @@
 
-{% from '@bootstrap/components/cards/vertical_card.html.twig' import news_vertical_card as news %}
+{% from '@bootstrap/components/cards/vertical_card.html.twig' import news_vertical_card as news_article %}
+{% import '@bootstrap/components/social/login.html.twig' as login %}
 {% import '@macros/form-macros.html.twig' as form %}
 
 <!-- Bootstrap core CSS -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://lipis.github.io/bootstrap-social/assets/css/font-awesome.css" rel="stylesheet">
+<style>
+    {% include "@bootstrap/bootstrap.min.css" %}
+    {% include "@bootstrap/custom.css.twig" %}
+</style>
 <div class="container" style="max-width:700px">
 
 
     <div class="row-fluid">
+        <h3>Social login macros</h3>
+        <div style="width:190px; padding:12px 0">
+            {{ login.twitter('Sign in with Twitter') }}
+            {{ login.facebook('Sign in with Facebook') }}
+            {{ login.google('Sign in with Google') }}
+            {{ login.linkedin('Sign in with Linkedin') }}
+        </div>
+    </div>
+    <div class="row-fluid">
 
-
-
-<!--
-        <form>
-
-            {{ form.label('dropdown', 'Dropdown') }}
-            {% set options %}
-                {{ form.option('1', 'Option 1') }}
-                {{ form.option('2', 'Option 2') }}
-                {{ form.option('3', 'Option 3', {'selected':'selected'}) }}
-                {{ form.option('4', 'Option 4') }}
-            {% endset %}
-            {{ form.select('dropdown', options, '{id: dropdown}') }}
-
-
-            <br>{{ form.textarea('test', 'content', {"style" : "border-color:red"}) }}
-            <br>{{ form.submit('Submit button')}}
-        </form>
--->
+        <h3>News article macro</h3>
 
         {{
-            news({
+            news_article({
                 "author": 'Nil Portugués',
                 "author_link": '/profile/nilportugues',
                 "header_image": 'http://images.ara.cat/politica/Diversos-Penedes-Comissio-Vilafranca-ACN_ARAIMA20150904_0368_1.jpg',
@@ -54,6 +50,26 @@
                 "title": 'Primal Battle'
             })
         #}
+
+    </div>
+    <div class="row-fluid">
+
+        <form>
+        <h3>Form macros</h3>
+
+            {{ form.label('dropdown', 'Dropdown') }}
+            {% set options %}
+                {{ form.option('1', 'Option 1') }}
+                {{ form.option('2', 'Option 2') }}
+                {{ form.option('3', 'Option 3', {'selected':'selected'}) }}
+                {{ form.option('4', 'Option 4') }}
+            {% endset %}
+            {{ form.select('dropdown', options, '{id: dropdown}') }}
+
+
+            <br>{{ form.textarea('test', 'content', {"style" : "border-color:red"}) }}
+            <br>{{ form.submit('Submit button', { "class" : "btn btn-success"})}}
+        </form>
 
     </div>
 </div>

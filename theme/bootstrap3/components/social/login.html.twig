@@ -1,0 +1,132 @@
+{% macro appnet(text, args) %}
+{{ _self.social_login('adn', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro bitbucket(text, args) %}
+{{ _self.social_login('bitbucket', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro dropbox(text, args) %}
+{{ _self.social_login('dropbox', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro facebook(text, args) %}
+{{ _self.social_login('facebook', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro flickr(text, args) %}
+{{ _self.social_login('flickr', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro foursquare(text, args) %}
+{{ _self.social_login('foursquare', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro github(text, args) %}
+{{ _self.social_login('github', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro google(text, args) %}
+{{ _self.social_login('google', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro instagram(text, args) %}
+{{ _self.social_login('instagram', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro linkedin(text, args) %}
+{{ _self.social_login('linkedin', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro microsoft(text, args) %}
+{{ _self.social_login('microsoft', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro odnoklassniki(text, args) %}
+{{ _self.social_login('odnoklassniki', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro openid(text, args) %}
+{{ _self.social_login('openid', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro pinterest(text, args) %}
+{{ _self.social_login('pinterest', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro reddit(text, args) %}
+{{ _self.social_login('reddit', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro soundcloud(text, args) %}
+{{ _self.social_login('soundcloud', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro tumblr(text, args) %}
+{{ _self.social_login('tumblr', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro twitter(text, args) %}
+{{ _self.social_login('twitter', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro vimeo(text, args) %}
+{{ _self.social_login('vimeo', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro vk(text, args) %}
+{{ _self.social_login('vk', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro yahoo(text, args) %}
+{{ _self.social_login('yahoo', text, args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+
+{% macro social_login(type, text, args) %}
+<a {% for attribute, value in args %}{{- attribute -}}="{{- value -}}" {% endfor %} class="btn btn-block btn-social btn-{{- type -}}">
+    <i class="fa fa-{{- type -}}"></i> {{- text -}}
+</a>
+{% endmacro %}
