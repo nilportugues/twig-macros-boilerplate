@@ -1,0 +1,138 @@
+{% macro appnet(args) %}
+    {{ _self.share_button('adn', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro bitbucket(args) %}
+    {{ _self.share_button('bitbucket', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro dropbox(args) %}
+    {{ _self.share_button('dropbox', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro facebook(args) %}
+    {% set href = { "href": 'https://www.facebook.com/sharer/sharer.php?u=' ~ args.href|url_encode}  %}
+    {% set args = args|merge(href) %}
+
+    {{ _self.share_button('facebook', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro flickr(args) %}
+    {{ _self.share_button('flickr', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro foursquare(args) %}
+    {{ _self.share_button('foursquare', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro github(args) %}
+    {{ _self.share_button('github', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro google(args) %}
+    {{ _self.share_button('google', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro instagram(args) %}
+    {{ _self.share_button('instagram', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro linkedin(args) %}
+    {{ _self.share_button('linkedin', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro microsoft(args) %}
+    {{ _self.share_button('microsoft', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro odnoklassniki(args) %}
+    {{ _self.share_button('odnoklassniki', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro openid(args) %}
+    {{ _self.share_button('openid', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro pinterest(args) %}
+    {{ _self.share_button('pinterest', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro reddit(args) %}
+    {{ _self.share_button('reddit', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro soundcloud(args) %}
+    {{ _self.share_button('soundcloud', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro tumblr(args) %}
+    {{ _self.share_button('tumblr', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro twitter(args) %}
+    {% set href = { "href": 'http://twitter.com/share?url=' ~ args.href|url_encode ~ "&via=" ~ args.twitter|url_encode ~ "&text=" ~ args.twitter_text|url_encode } %}
+    {% set args = args|merge(href) %}
+
+    {{ _self.share_button('twitter', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro vimeo(args) %}
+    {{ _self.share_button('vimeo', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro vk(args) %}
+    {{ _self.share_button('vk', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+{% macro yahoo(args) %}
+    {{ _self.share_button('yahoo', args)}}
+{% endmacro %}
+
+{# ----------------------------------------------------------------------------------- #}
+
+
+{% macro share_button(type, args) %}
+    <a {% for attribute, value in args %}{{- attribute -}}="{{- value -}}" {% endfor %} class="btn btn-social-icon btn-{{- type -}}">
+    <i class="fa fa-{{- type -}}"></i>
+    </a>
+{% endmacro %}

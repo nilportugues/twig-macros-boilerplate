@@ -1,6 +1,7 @@
 
 {% from '@bootstrap/components/cards/vertical_card.html.twig' import news_vertical_card as news_article %}
 {% import '@bootstrap/components/social/login.html.twig' as login %}
+{% import '@bootstrap/components/social/share.html.twig' as social %}
 {% import '@macros/form-macros.html.twig' as form %}
 
 <!-- Bootstrap core CSS -->
@@ -18,10 +19,24 @@
     <div class="row-fluid">
         <h3>Social login macros</h3>
         <div style="width:190px; padding:12px 0">
-            {{ login.twitter('Sign in with Twitter') }}
+            {{ login.twitter('Share on Twitter') }}
             {{ login.facebook('Sign in with Facebook') }}
             {{ login.google('Sign in with Google') }}
             {{ login.linkedin('Sign in with Linkedin') }}
+        </div>
+        <h3>Share macros</h3>
+        <div style="width:190px; padding:12px 0">
+            {% set social_data  = {
+                'target' : 'popup',
+                'href': 'http://localhost:8000/',
+                'twitter' : 'niluspc',
+                'twitter_text' : 'News header'
+                }
+            %}
+            {{ social.twitter(social_data) }}
+            {{ social.facebook(social_data) }}
+            {{ social.google(social_data) }}
+            {{ social.linkedin(social_data) }}
         </div>
     </div>
     <div class="row-fluid">
