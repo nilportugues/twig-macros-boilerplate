@@ -35,7 +35,7 @@ Supported Bootstrap themes:
 ```
 
 
-##### Social Share button**
+#### Social Share button
 
 - **Macro**: `share_button(shares)`
 - **Attributes**:
