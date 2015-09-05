@@ -35,10 +35,16 @@ Supported Bootstrap themes:
 ```
 
 
-**Social Share button**
+##### Social Share button**
+
+- **Macro**: `share_button(shares)`
+- **Attributes**:
+  - **shares** : expects an `array` of `social.*()` macros.
+
+**Example**
 
 ```twig
-{% import '@bootstrap/components/social/share.html.twig' as share %}
+{% import '@bootstrap/components/social/share.html.twig' as social %}
 {% from '@bootstrap/components/social/share_button.html.twig' import share_button as share %}
 
 <div class="row-fluid">
