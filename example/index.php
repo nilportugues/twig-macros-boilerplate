@@ -19,6 +19,7 @@ $pages = [
     'share' => './components/share.html.twig',
     'maps'  => './components/maps.html.twig',
     'images'  => './components/images.html.twig',
+    'blog-post-lifehack'  => './pages/blog/post/blog-post-lifehack.html.twig',
 ];
 
 $page = './index.html.twig';

@@ -1,0 +1,33 @@
+<div class="row-fluid">
+    <div class="col-sm-8  col-lg-9">
+        <img style="width:100%" src="http://cdn-media-2.lifehack.org/wp-content/files/2015/06/8785445626_587fdac14d_b.jpg">
+
+
+        <div class="row-fluid">
+            <div class="nav hidden-xs hidden-sm col-md-3 col-lg-2">
+
+                    {% import '@bootstrap/components/social/login.html.twig' as login %}
+                    <div style="padding-top:32px">
+                        {{ login.twitter('Tweet', {"target": "popup"}) }}
+                        {{ login.facebook('Comparte', {"target": "popup"}) }}
+                        {{ login.google('Comparte', {"target": "popup"}) }}
+                        {{ login.linkedin('Comparte', {"target": "popup"}) }}
+                    </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-10" >
+
+                <h1>{{ post_headline }}</h1>
+                <p><a class="badge badge-{{ category_slug }}" href="{{- category_url -}}" title="{{ category }}">{{ category }}</a></p>
+
+                <p class="small text-muted">May 19, 2015</p>
+                {{- post_body -}}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-lg-3">
+        aaa
+    </div>
+</div>
