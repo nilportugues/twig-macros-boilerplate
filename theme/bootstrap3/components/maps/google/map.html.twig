@@ -1,3 +1,7 @@
 {% macro google_maps(id, args) %}
     <div id="{{ id }}" data-google-map="true" {% for attribute, value in args %} {{- attribute -}}="{{- value -}}" {% endfor %}></div>
 {% endmacro %}
+
+{% macro google_streetview(id, args) %}
+    <div id="{{ id }}" data-google-streetview="true" {% for attribute, value in args %} {{- attribute -}}="{{- value -}}" {% endfor %}></div>
+{% endmacro %}

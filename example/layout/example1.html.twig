@@ -4,7 +4,7 @@
 
 {% from '@bootstrap/components/cards/vertical_card.html.twig' import news_vertical_card as news_article %}
 {% from '@bootstrap/components/social/share_button.html.twig' import share_button as share %}
-{% from '@bootstrap/components/maps/google/map.html.twig' import google_maps as google_maps %}
+{% import '@bootstrap/components/maps/google/map.html.twig' as google %}
 
 {% import '@bootstrap/macros/media/image.html.twig' as image %}
 {% import '@bootstrap/components/social/login.html.twig' as login %}
@@ -41,12 +41,13 @@
 <body>
 
 <div class="container">
+    <h3>Google Maps (Styled)</h3>
     <div class="row-fluid">
-        <h3>Styled Google Maps</h3>
+
 
         <div class="col-md-6" >
             {{
-                google_maps(
+            google.google_maps(
                     'barcelona',
                     {
                         "style":"width:100%; height:250px; border-radius: 8px; overflow: hidden",
@@ -65,7 +66,7 @@
         </div>
         <div class="col-md-6" >
             {{
-                google_maps(
+            google.google_maps(
                     'office',
                     {
                         "style":"width:100%; height:250px; border-radius: 8px; overflow: hidden",
@@ -85,6 +86,39 @@
     </div>
 </div>
 
+<div class="container">
+    <h3>Google Streetview Maps</h3>
+    <div class="row-fluid">
+
+
+            <div class="col-md-6" >
+                {{
+                google.google_streetview(
+                        'barcelona-street',
+                        {
+                            "style":"width:100%; height:250px; border-radius: 8px; overflow: hidden",
+                            "data-zoom":"12",
+                            "data-lat":"41.3870154",
+                            "data-lon":"2.1700471"
+                        }
+                    )
+                }}
+            </div>
+            <div class="col-md-6" >
+                {{
+                google.google_streetview(
+                        'office-street',
+                        {
+                            "style":"width:100%; height:250px; border-radius: 8px; overflow: hidden",                        
+                            "data-lat":"41.395086",
+                            "data-lon":"2.1502881"                        
+                        }
+                    )
+                }}
+            </div>
+        </div>    
+    </div>
+</div>
 
 <div class="container">
     <div class="row-fluid">

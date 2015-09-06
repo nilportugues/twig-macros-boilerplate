@@ -7,7 +7,7 @@ if (typeof googleMapsStyles === 'undefined') {
  * Each map requires to have the following data-attributes: lat, lon, zoom, marker
  */
 
-function googleMapsInit() {
+function googleMapViewInit() {
     $('[data-google-map=true]').each(function() {
 
         var mapOptions = {
@@ -33,6 +33,21 @@ function googleMapsInit() {
     });
 }
 
+
+function googleStreetViewInit() {
+    $('[data-google-streetview=true]').each(function() {
+
+        new google.maps.StreetViewPanorama(
+            document.getElementById($(this).attr('id')),
+            {
+                position: {lat: $(this).data('lat'), lng: $(this).data('lon')},
+                pov: {heading: 270, pitch: 0},
+                visible: true
+            });
+    });
+}
+
 $(function() {
-    google.maps.event.addDomListener(window, 'load', googleMapsInit);
+    google.maps.event.addDomListener(window, 'load', googleMapViewInit);
+    google.maps.event.addDomListener(window, 'load', googleStreetViewInit);
 });
