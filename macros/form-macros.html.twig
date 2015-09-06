@@ -12,10 +12,33 @@
 
 
 {% macro input(type, name, args) %}
-{% spaceless %}
+{% set id = {"id" : name} %}
+
+{% if args is empty %}{% set args = {} %}{% endif %}
+
+{% set args = id|merge(args) %}
+    {% spaceless %}
 <input type="{{- type -}}" name="{{- name -}}"{% for attribute, value in args %} {{- attribute -}}="{{- value -}}"{% endfor %}">
 {% endspaceless %}
 {% endmacro %}
+
+
+{# --------------------------------------------------------------------------- #}
+
+
+
+{% macro radio(name, args) %}
+    {{ _self.input("radio", name, args) }}
+{% endmacro %}
+
+{# --------------------------------------------------------------------------- #}
+
+
+
+{% macro checkbox(name, args) %}
+    {{ _self.input("checkbox", name, args) }}
+{% endmacro %}
+
 
 
 {# --------------------------------------------------------------------------- #}
@@ -103,7 +126,7 @@
 {% macro label(labelid, label, args) %}
 {% spaceless %}
 <label for="{{- labelid -}}"{% for attribute, value in args %} {{- attribute -}}="{{- value -}}" {% endfor %}>
-{{- label -}}
+{{- label|raw -}}
 </label>
 {% endspaceless %}
 {% endmacro %}
