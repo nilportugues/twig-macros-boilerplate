@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% import '@bootstrap/components/media/image.html.twig' as image %}
+
+{% block javascript %}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="row-fluid">
+    <h3>Image macros</h3>
+    {{
+        image.thumbnail({
+            "src": 'http://images.ara.cat/politica/Diversos-Penedes-Comissio-Vilafranca-ACN_ARAIMA20150904_0368_1.jpg',
+            "alt": "Diversos membres d'Òmnium Alt Penedès, l'ANC i la Comissió 11 de setembre de Vilafranca del Penedès",
+            "width" : "400px"
+        })
+    }}
+    <br>
+    {{
+         image.rounded({
+            "src": 'http://images.ara.cat/politica/Diversos-Penedes-Comissio-Vilafranca-ACN_ARAIMA20150904_0368_1.jpg',
+            "alt": "Diversos membres d'Òmnium Alt Penedès, l'ANC i la Comissió 11 de setembre de Vilafranca del Penedès",
+            "width" : "400px"
+        })
+    }}
+</div>
+
+{% endblock %}

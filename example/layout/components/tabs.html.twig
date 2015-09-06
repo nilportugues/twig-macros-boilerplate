@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+{% from '@bootstrap/components/tabs/flat_tabs/flat_tabs.html.twig' import flat_tabs as flat_tabs %}
+{% from '@bootstrap/components/tabs/paneled_tabs/paneled_tabs.html.twig' import paneled_tabs as paneled_tabs %}
+
+{% block javascript %}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <h3>Basic Tabs</h3>
+            {{
+            flat_tabs
+                (
+                    {
+                        "kanto" : "Kanto",
+                        "johto" : "Johto",
+                        "hoenn": "Hoenn"
+                    },
+                    {
+                        "kanto" : "<ul><li>Bulbasaur</li><li>Charmander</li><li>Squirtle</li></ul>",
+                        "johto" : "<ul><li>Chikorita</li><li>Cyndaquil</li><li>Totodile</li></ul>",
+                        "hoenn": "<ul><li>Treecko</li><li>Torchic</li><li>Mudkip</li></ul>"
+                    },
+                    "hoenn"
+                )
+            }}
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <h3>Paneled Tabs</h3>
+
+
+            {{
+            paneled_tabs
+            (
+                {
+                    "kanto1" : "Kanto",
+                    "johto1" : "Johto",
+                    "hoenn1": "Hoenn"
+                },
+                {
+                    "kanto1" : "<ul><li>Bulbasaur</li><li>Charmander</li><li>Squirtle</li></ul>",
+                    "johto1" : "<ul><li>Chikorita</li><li>Cyndaquil</li><li>Totodile</li></ul>",
+                    "hoenn1": "<ul><li>Treecko</li><li>Torchic</li><li>Mudkip</li></ul>"
+                },
+                    "kanto1"
+                )
+            }}
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <h3>Named Paneled Tabs</h3>
+
+
+            {{
+            paneled_tabs
+            (
+                    {
+                        "kanto2" : "Kanto",
+                        "johto2" : "Johto",
+                        "hoenn2": "Hoenn"
+                    },
+                    {
+                        "kanto2" : "<ul><li>Bulbasaur</li><li>Charmander</li><li>Squirtle</li></ul>",
+                        "johto2" : "<ul><li>Chikorita</li><li>Cyndaquil</li><li>Totodile</li></ul>",
+                        "hoenn2": "<ul><li>Treecko</li><li>Torchic</li><li>Mudkip</li></ul>"
+                    },
+                    "johto2",
+                    "Starter Pokémon"
+                )
+            }}
+        </div>
+    </div>
+</div>
+{% endblock %}

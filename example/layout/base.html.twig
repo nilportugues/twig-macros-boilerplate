@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://lipis.github.io/bootstrap-social/assets/css/font-awesome.css" rel="stylesheet">
+    <style>{% include "@bootstrap/bootstrap.min.css" %}</style>
+    <style>{% include "@bootstrap/custom.css.twig" %}</style>
+
+    <!-- Bootstrap Flat UI -->
+    <link href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet">
+    <style>{% include "@flatui/custom.css.twig" %}</style>
+
+    <!-- Bootstrap core JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script>{% include "@bootstrap/custom.js.twig" %}</script>
+    {% block javascript %}{% endblock %}
+
+</head>
+<body>
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
+</body>
+</html>

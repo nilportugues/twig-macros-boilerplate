@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% from '@bootstrap/components/social/share_button.html.twig' import share_button as share %}
+{% import '@bootstrap/components/social/login.html.twig' as login %}
+{% import '@bootstrap/components/social/share.html.twig' as social %}
+
+{% block javascript %}
+
+{% endblock %}
+
+
+{% block body %}
+
+    <h3>Social macros</h3>
+
+    <div class="row-fluid">
+
+        <div class="col-sm-6">
+            <h4>Sign in</h4>
+            <div style="width:200px; padding:12px 0">
+                {{ login.twitter('Sign in Twitter', {"target": "popup"}) }}
+                {{ login.facebook('Sign in with Facebook', {"target": "popup"}) }}
+                {{ login.google('Sign in with Google', {"target": "popup"}) }}
+                {{ login.linkedin('Sign in with Linkedin', {"target": "popup"}) }}
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <h4>Share buttons</h4>
+            <div style="width:190px; padding:12px 0">
+                {% set social_data  = {'href': 'http://localhost:8000/'} %}
+                {% set twitter_social_data  = {'twitter' : 'niluspc', 'twitter_text' : 'News header'} %}
+                {% set whatsapp_social_data  = {'title' : 'News header'} %}
+
+                {{ social.twitter(twitter_social_data|merge(social_data)) }}
+                {{ social.facebook(social_data) }}
+                {{ social.whatsapp(whatsapp_social_data|merge(social_data)) }}
+                {{ share([social.google(social_data), social.linkedin(social_data), social.pinterest(social_data)]) }}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -14,5 +14,16 @@ $twig = new Twig_Environment(
     []
 );
 
+$pages = [
+    'tabs'  => './components/tabs.html.twig',
+    'share' => './components/share.html.twig',
+    'maps'  => './components/maps.html.twig',
+    'images'  => './components/images.html.twig',
+];
 
-echo $twig->loadTemplate('./example1.html.twig')->render([]);
+$page = './index.html.twig';
+if(!empty($_GET) && !empty($pages[$_GET['page']])) {
+    $page = $pages[$_GET['page']];
+}
+
+echo $twig->loadTemplate($page)->render([]);
