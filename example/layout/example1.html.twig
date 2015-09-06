@@ -4,9 +4,9 @@
 
 {% from '@bootstrap/components/cards/vertical_card.html.twig' import news_vertical_card as news_article %}
 {% from '@bootstrap/components/social/share_button.html.twig' import share_button as share %}
-{% import '@bootstrap/components/maps/google/map.html.twig' as google %}
+{% import '@default/components/maps/google/map.html.twig' as google %}
 
-{% import '@bootstrap/macros/media/image.html.twig' as image %}
+{% import '@bootstrap/components/media/image.html.twig' as image %}
 {% import '@bootstrap/components/social/login.html.twig' as login %}
 {% import '@bootstrap/components/social/share.html.twig' as social %}
 {% import '@macros/form-macros.html.twig' as form %}
@@ -22,8 +22,8 @@
 
 
 <script>
-    {%  include '@bootstrap/components/maps/google/themes/apple-maps-theme.js' %}
-    {%  include '@bootstrap/components/maps/google/jquery.google_maps.js' %}
+    {%  include '@default/components/maps/google/themes/apple-maps-theme.js' %}
+    {%  include '@default/components/maps/google/jquery.google_maps.js' %}
 </script>
 
 
@@ -35,8 +35,8 @@
 <style>{% include "@bootstrap/custom.css.twig" %}</style>
 
 <!-- Bootstrap Flat UI -->
-<!--<link href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet">-->
-<!--<style>{% include "@flatui/custom.css.twig" %}</style>-->
+<!--<link href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet">
+<style>{% include "@flatui/custom.css.twig" %}</style>-->
 </head>
 <body>
 
@@ -86,6 +86,12 @@
     </div>
 </div>
 
+
+
+<hr>
+
+
+
 <div class="container">
     <h3>Google Streetview Maps</h3>
     <div class="row-fluid">
@@ -116,9 +122,15 @@
                     )
                 }}
             </div>
-        </div>    
     </div>
 </div>
+
+
+
+
+<hr>
+
+
 
 <div class="container">
     <div class="row-fluid">
@@ -156,16 +168,16 @@
             flat_tabs
             (
                 {
-                    "vuelos" : "Vuelos",
-                    "hoteles" : "Hoteles",
-                    "viajes": "<span class='fa fa-github'></span> Viajes"
+                    "kanto" : "Kanto",
+                    "johto" : "Johto",
+                    "hoenn": "Hoenn"
                 },
                 {
-                    "vuelos" : vuelos_tab,
-                    "hoteles" : hoteles_tab,
-                    "viajes": viajes_tab
+                    "kanto" : "<ul><li>Bulbasaur</li><li>Charmander</li><li>Squirtle</li></ul>",
+                    "johto" : "<ul><li>Chikorita</li><li>Cyndaquil</li><li>Totodile</li></ul>",
+                    "hoenn": "<ul><li>Treecko</li><li>Torchic</li><li>Mudkip</li></ul>"
                 },
-                "viajes"
+                "hoenn"
             )
         }}
      </div>
@@ -187,12 +199,12 @@
                 {
                     "kanto1" : "Kanto",
                     "johto1" : "Johto",
-                    "sinnoh1": "Sinnoh"
+                    "hoenn1": "Hoenn"
                 },
                 {
                     "kanto1" : "<ul><li>Bulbasaur</li><li>Charmander</li><li>Squirtle</li></ul>",
                     "johto1" : "<ul><li>Chikorita</li><li>Cyndaquil</li><li>Totodile</li></ul>",
-                    "sinnoh1": "<ul><li>Treecko</li><li>Torchic</li><li>Mudkip</li></ul>"
+                    "hoenn1": "<ul><li>Treecko</li><li>Torchic</li><li>Mudkip</li></ul>"
                 },
                 "kanto1"
             )
@@ -210,12 +222,12 @@
                 {
                     "kanto2" : "Kanto",
                     "johto2" : "Johto",
-                    "sinnoh2": "Sinnoh"
+                    "hoenn2": "Hoenn"
                 },
                 {
                     "kanto2" : "<ul><li>Bulbasaur</li><li>Charmander</li><li>Squirtle</li></ul>",
                     "johto2" : "<ul><li>Chikorita</li><li>Cyndaquil</li><li>Totodile</li></ul>",
-                    "sinnoh2": "<ul><li>Treecko</li><li>Torchic</li><li>Mudkip</li></ul>"
+                    "hoenn2": "<ul><li>Treecko</li><li>Torchic</li><li>Mudkip</li></ul>"
                 },
                 "johto2",
                 "Starter Pokémon"
@@ -252,9 +264,11 @@
             <div style="width:190px; padding:12px 0">
                 {% set social_data  = {'href': 'http://localhost:8000/'} %}
                 {% set twitter_social_data  = {'twitter' : 'niluspc', 'twitter_text' : 'News header'} %}
+                {% set whatsapp_social_data  = {'title' : 'News header'} %}
 
                 {{ social.twitter(twitter_social_data|merge(social_data)) }}
                 {{ social.facebook(social_data) }}
+                {{ social.whatsapp(whatsapp_social_data|merge(social_data)) }}
                 {{ share([social.google(social_data), social.linkedin(social_data), social.pinterest(social_data)]) }}
             </div>
         </div>

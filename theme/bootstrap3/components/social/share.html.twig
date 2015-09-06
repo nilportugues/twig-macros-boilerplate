@@ -114,6 +114,16 @@
 </a>
 {% endmacro %}
 
+
+{# ----------------------------------------------------------------------------------- #}
+{% macro whatsapp(args) %}
+    {% set href = 'whatsapp://send?text=' ~ args.href|url_encode ~ " " ~ args.whatsapp_title|url_encode %}
+
+    <a target="popup" href="{{- href -}}" class="btn btn-social-icon btn-whatsapp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+{% endmacro %}
+
 {# ----------------------------------------------------------------------------------- #}
 
 {% macro vimeo(args) %}
