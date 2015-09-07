@@ -1,0 +1,18 @@
+.main-list {
+    padding-left: 0;
+}
+
+.main-list .media {
+    padding-bottom: 12px;
+}
+
+.main-list .media-object
+{
+    width:80px ;
+}
+
+.main-list .media-heading
+{
+    line-height: 20px;
+    font-size:16px;
+}
